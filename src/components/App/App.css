@@ -1,31 +1,28 @@
 .App {
+  background-color: #ffffff;
+  font-size: calc(10px + 2vmin);
   text-align: center;
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height:100vh;
+  color: #321c3d;
   width:100%;
 }
 
-.Main-form{
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-  width:100%;
+.App__title{
+  background-color: #321c3d;
+  color:#ffffff;
+  text-align:start;
+  padding-left: 10%;
+  height:10vh;
+  border-bottom: 1px solid #d4bbd8;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-h2{
-  font-size: 1.25em;
+.App__tracklistContainers{
+  display: grid;
+  grid-template-columns: 1fr 3% 1fr;
+  justify-items: center;
+  font-size: calc(10px + 1vmin);
+  height: 80vh;
+  padding-left: 1%;
+  padding-right: 1%;
+  background-color:#e6e3cf;
 }

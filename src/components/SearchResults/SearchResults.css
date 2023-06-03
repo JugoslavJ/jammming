@@ -1,0 +1,14 @@
+.SearchResults {
+    height:80vh;
+    width:100%;
+}
+
+.SearchResults__title{
+    height:8%;
+    text-align: center;
+    padding-bottom: 8vh;
+}
+
+.SearchResults__TrackList{
+    height:88%;
+}

@@ -1,0 +1,35 @@
+.Playlist {
+    grid-column: 3;
+    height:80vh;
+    width:100%;
+}
+
+.Playlist__title{
+    height: 8%;
+    text-align: center;
+}
+
+.Playlist__input{
+    height: 7%;
+    width: 100%;
+    display:grid;
+    grid-template-columns: 2fr 1fr;
+    padding-bottom:5%;
+}
+
+.Playlist__TrackList{
+    height:83%;
+}
+
+
+@media only screen and (orientation: portrait){
+    .Playlist__input{
+        grid-template-columns: 1fr;
+        height:14%;
+        padding-bottom:10%;
+    }
+
+    .Playlist__TrackList{
+        height:76%;
+    }
+}

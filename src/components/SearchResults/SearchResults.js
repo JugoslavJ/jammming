@@ -5,10 +5,13 @@ import TrackList from '../TrackList/TrackList';
 function SearchResults({searchResults, onAdd}){
     return (
         <div className="SearchResults">
-            <TrackList 
-                tracks={searchResults}
-                onAdd={onAdd}
-            />
+            <h2 className="SearchResults__title">Search Results</h2>
+            <div className="SearchResults__TrackList">
+                <TrackList 
+                    tracks={searchResults}
+                    onAdd={onAdd}
+                />
+            </div>
         </div>
     ); 
 }   

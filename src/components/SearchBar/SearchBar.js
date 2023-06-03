@@ -9,12 +9,22 @@ function SearchBar({onSearch}){
     }
 
     function handleSearch(){
-        onSearch(term);
+        if(term){
+            onSearch(term);
+        }
     }
 
     return (
         <div className="SearchBar">
-            <input placeholder="Enter a song title" onChange={handleTermChange} />
+            <input 
+                placeholder="Enter a song title" 
+                onChange={handleTermChange} 
+                onKeyDown= { (e) =>{
+                    if(e.key === "Enter"){
+                        handleSearch();
+                    }
+                }}
+            />
             <button className="SearchBar__button" onClick={handleSearch}>
                 SEARCH
             </button>

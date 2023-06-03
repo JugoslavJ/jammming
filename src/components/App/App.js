@@ -15,6 +15,8 @@ function App(){
     function handleSearch(term){
         Spotify.search(term)
         .then((result) => setSearchResults(result));
+
+        //setSearchResults(Spotify.dummySearch());
     }
 
     function handleNameChange(newName){
@@ -41,25 +43,35 @@ function App(){
         const playlistUris = playlistTracks.map( (track) => {
             return track.uri;
         });
-        Spotify.save(playlistName, playlistUris);
-    }
 
+        const plistName = playlistName;
+        //Spotify.dummySave(playlistName, playlistUris);
+        Spotify.savePlaylist(playlistName, playlistUris)
+        .then((result) => alert("Playlist " + plistName + " saved succesfully!"))
+        .catch( (error) => console.log(error));
+            
+        setPlaylistTracks([]);
+        setPlaylistName("New Playlist");
+    }
+    Spotify.getAccessToken();
     return (
         <div className="App">
             <h1 className="App__title">Jammming</h1>
             <SearchBar 
                 onSearch={handleSearch} 
             />
-            <SearchResults 
-                searchResults={searchResults}
-                onAdd={addTrack}
-            />
-            <Playlist
-                tracks={playlistTracks}
-                onRemove={removeTrack}
-                onNameChange={handleNameChange}
-                onSave={handleSave}
-            />
+            <div className="App__tracklistContainers">
+                <SearchResults 
+                    searchResults={searchResults}
+                    onAdd={addTrack}
+                />
+                <Playlist
+                    tracks={playlistTracks}
+                    onRemove={removeTrack}
+                    onNameChange={handleNameChange}
+                    onSave={handleSave}
+                />
+            </div>
         </div>
     );
 
